@@ -6,11 +6,11 @@
 #    By: malord <malord@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 11:19:25 by malord            #+#    #+#              #
-#    Updated: 2022/04/20 11:20:03 by malord           ###   ########.fr        #
+#    Updated: 2022/04/20 13:04:06 by malord           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libft.a
+NAME		=	libftprintf.a
 
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
