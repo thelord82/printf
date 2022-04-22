@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 11:22:06 by malord            #+#    #+#             */
-/*   Updated: 2022/04/22 16:37:33 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/22 16:53:08 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ int	ft_printf(const char *str, ...)
 		{
 			str++;
 			c = va_arg(args, int);
-			ft_putchar(c);
-			//ft_checkchar(*(str), c);
+			ft_checkchar(*(str), c);
 		}
 		str++;
 	}
