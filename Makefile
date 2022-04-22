@@ -6,7 +6,7 @@
 #    By: malord <malord@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 11:19:25 by malord            #+#    #+#              #
-#    Updated: 2022/04/20 13:04:06 by malord           ###   ########.fr        #
+#    Updated: 2022/04/21 15:42:54 by malord           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
 RM			=	rm -f
 
-SRCS		=	ft_printf.c
+SRCS		=	ft_printf.c		\
+				ft_putchar.c	\
+				ft_checkchar.c	
 
 BSRCS		=	
 
@@ -24,6 +26,9 @@ OBJS		= 	${SRCS:.c=.o}
 BOBJS		=	${BSRCS:.c=.o}
 
 # Targets
+
+.c.o:
+				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all: 			$(NAME)
 
@@ -44,4 +49,6 @@ re: 			fclean all
 # Bonus points
 bonus: 			$(NAME) $(BOBJS)
 				ar -crs $(NAME) $(BOBJS)
+
+.PHONY:			all clean fclean re bonus
 				

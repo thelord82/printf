@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 11:22:06 by malord            #+#    #+#             */
-/*   Updated: 2022/04/20 16:10:49 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/22 16:37:33 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,44 @@ char *ft_printf(const char *str, ...)
 	}
 }*/
 
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include "ft_putnbr.c"
- 
-void simple_printf(const char* fmt, ...)
+#include "ft_printf.h"
+
+int	ft_printf(const char *str, ...)
+{
+	va_list	args;
+	int		c;
+	int		i;
+
+	va_start(args, str);
+	c = 0;
+	i = 0;
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str++;
+			c = va_arg(args, int);
+			ft_putchar(c);
+			//ft_checkchar(*(str), c);
+		}
+		str++;
+	}
+	va_end(args);
+	return (0);
+}
+
+int main()
+{
+	char c = '1';
+	char d = '2';
+	char e = '3';
+	char f = '4';
+	printf("Printf OG : %c%c%c%c\n", c, d, e, f);
+	ft_printf("%c%c%c%c", c, d, e, f);
+	write (1, "\n", 1);
+}
+
+/*void simple_printf(const char* fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
@@ -68,4 +100,4 @@ void simple_printf(const char* fmt, ...)
 int main(void)
 {
     simple_printf("%d%c%f%f", 3, 'a', 1.999, 42.5); 
-}
+}*/
