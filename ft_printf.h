@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:16:15 by malord            #+#    #+#             */
-/*   Updated: 2022/04/22 16:33:38 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/25 15:05:19 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <stdio.h>
+# include "libft.h"
 
 void	ft_putchar(char c);
-void	ft_checkchar(char c, int argu);
+void	ft_checkchar(char c, va_list argu);
+void	ft_putstr(char *s);
+char	*ft_itoa(int n);
+size_t	ft_strlen(const char *s);
 
 #endif
