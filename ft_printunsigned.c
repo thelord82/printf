@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printunsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 07:59:17 by malord            #+#    #+#             */
-/*   Updated: 2022/04/26 07:40:45 by malord           ###   ########.fr       */
+/*   Created: 2022/04/26 09:26:43 by malord            #+#    #+#             */
+/*   Updated: 2022/04/26 15:16:49 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+void	ft_printunsigned(unsigned int n)
 {
-	if (!s)
-		return ;
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	if (n < 0)
+		n += (4294967295 + 1);
+	if (n >= 10)
+		ft_printunsigned(n / 10);
+	n = n % 10 + 48;
+	write(1, &n, 1);
 }

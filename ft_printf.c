@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 11:22:06 by malord            #+#    #+#             */
-/*   Updated: 2022/04/25 14:53:38 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/26 15:46:27 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_printf(const char *str, ...)
 		{
 			str++;
 			ft_checkchar(*(str), args);
-			str++;
+			//str++;
 		}
 		else
 			write (1, *(&str), 1);
@@ -35,11 +35,16 @@ int	ft_printf(const char *str, ...)
 
 int main()
 {
-	//char c = '3';
+	//int x = 50;
+   	//int *ptr = &x;
+	char c = '3';
 	//char d = '4';
 	//char e = '5';
 	//char f = '6';
-	char str[] = "RECTUM !!!!!";
-	printf("Printf OG : %s%d\n", str, 250);
-	ft_printf("Je sais pas si ca marche hein? %s%d", str, 250);
+	//char str[] = "Je sais pas si ca marche hein? ";
+	char str2[] = "RECTUM !!!!!";
+	//printf("Printf OG : 632414 est %x %X\n", -2, 2147483647);
+   	//printf("The address is: %p, the value is %d\n", ptr, *ptr);
+	printf("PRINTF OG : Le caractere est %c, la phrase est %s, les nombres sont %d, %i, %u, %x et %X\n", c, str2, 150, -399, 218, 632414, 150);
+	ft_printf("MON PRINTF: Le caractere est %c, la phrase est %s, les nombres sont %d, %i, %u, %x et %X\n", c, str2, 150, -399, 218, 632414, 150);
 }

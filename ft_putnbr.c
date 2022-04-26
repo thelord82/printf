@@ -6,9 +6,11 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:22:43 by malord            #+#    #+#             */
-/*   Updated: 2022/04/20 14:24:32 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/26 07:58:16 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 void	ft_putnbr(int n)
 {
@@ -29,5 +31,4 @@ void	ft_putnbr(int n)
 	}
 	n = n % 10 + 48;
 	write(1, &n, 1);
-	write(1, "\n", 1);
 }
