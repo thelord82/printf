@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:22:43 by malord            #+#    #+#             */
-/*   Updated: 2022/04/27 12:51:36 by malord           ###   ########.fr       */
+/*   Created: 2022/03/31 14:29:08 by malord            #+#    #+#             */
+/*   Updated: 2022/04/19 08:32:33 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putnbr(int n)
-{	
-	long	len;
-
-	len = ft_numlen(n);
-	if (n == -2147483648)
-	{
-		write(1, "-", 1);
-		write(1, "2", 1);
-		n = 147483648;
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = -n;
-	}
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	n = n % 10 + 48;
-	write(1, &n, 1);
-	return (len);
+// Fills the string with \0 characters
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, '\0', n);
 }

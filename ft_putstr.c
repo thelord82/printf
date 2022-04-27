@@ -6,19 +6,23 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 07:59:17 by malord            #+#    #+#             */
-/*   Updated: 2022/04/26 07:40:45 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/27 10:53:15 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
+	int	len;
+
+	len = ft_strlen(s);
 	if (!s)
-		return ;
+		return (0);
 	while (*s)
 	{
 		ft_putchar(*s);
 		s++;
 	}
+	return (len);
 }

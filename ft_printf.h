@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:16:15 by malord            #+#    #+#             */
-/*   Updated: 2022/04/26 15:32:21 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:25:00 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@
 # include <stdio.h>
 # include "libft.h"
 
-void	ft_putchar(char c);
-void	ft_checkchar(char c, va_list argu);
-void	ft_putstr(char *s);
-char	*ft_itoa(int n);
-size_t	ft_strlen(const char *s);
-void	ft_putnbr(int n);
-void	ft_printunsigned(unsigned int n);
-void	ft_printhexa(int n, char c);
-void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_printptr(int n);
+int				ft_putchar(char c);
+int				ft_checkchar(char c, va_list argu);
+int				ft_numlen(unsigned int nbr);
+int				ft_putstr(char *s);
+int				ft_printptr(va_list ptr);
+int				ft_putnbr(int n);
+int				ft_printunsigned(unsigned int n);
+int				ft_printhexa(unsigned int n, char c);
+int				ft_printf(const char *str, ...);
 
 #endif

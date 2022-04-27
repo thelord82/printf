@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:22:43 by malord            #+#    #+#             */
-/*   Updated: 2022/04/27 12:51:36 by malord           ###   ########.fr       */
+/*   Created: 2022/04/03 10:23:06 by malord            #+#    #+#             */
+/*   Updated: 2022/04/26 13:42:46 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putnbr(int n)
-{	
-	long	len;
+/* Allocate the necessary memory with malloc, then fills it with \0 
+	characters for security*/
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
 
-	len = ft_numlen(n);
-	if (n == -2147483648)
-	{
-		write(1, "-", 1);
-		write(1, "2", 1);
-		n = 147483648;
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = -n;
-	}
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	n = n % 10 + 48;
-	write(1, &n, 1);
-	return (len);
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	if (count == SIZE_MAX && size == SIZE_MAX)
+		return (NULL);
+	ft_bzero(ptr, (count * size));
+	return (ptr);
 }

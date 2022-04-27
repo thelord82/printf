@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:22:43 by malord            #+#    #+#             */
-/*   Updated: 2022/04/27 12:51:36 by malord           ###   ########.fr       */
+/*   Created: 2022/03/31 11:05:18 by malord            #+#    #+#             */
+/*   Updated: 2022/04/19 08:36:36 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putnbr(int n)
-{	
-	long	len;
+// Fills string s with character value of c, while n bytes
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t			i;
 
-	len = ft_numlen(n);
-	if (n == -2147483648)
+	i = 0;
+	while (i < n)
 	{
-		write(1, "-", 1);
-		write(1, "2", 1);
-		n = 147483648;
+		((unsigned char *)s)[i] = c;
+		i++;
 	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = -n;
-	}
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	n = n % 10 + 48;
-	write(1, &n, 1);
-	return (len);
+	return (s);
 }

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:22:43 by malord            #+#    #+#             */
-/*   Updated: 2022/04/27 12:51:36 by malord           ###   ########.fr       */
+/*   Created: 2022/04/27 11:30:40 by malord            #+#    #+#             */
+/*   Updated: 2022/04/27 16:59:27 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
-{	
-	long	len;
+int	ft_numlen(unsigned int nbr)
+{
+	long	i;
 
-	len = ft_numlen(n);
-	if (n == -2147483648)
+	i = 1;
+	if (nbr < 0)
 	{
-		write(1, "-", 1);
-		write(1, "2", 1);
-		n = 147483648;
+		nbr = -nbr;
+		i++;
 	}
-	if (n < 0)
+	while (nbr >= 10)
 	{
-		write(1, "-", 1);
-		n = -n;
+		nbr /= 10;
+		i++;
 	}
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	n = n % 10 + 48;
-	write(1, &n, 1);
-	return (len);
+	return (i);
 }
