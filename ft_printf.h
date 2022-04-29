@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:16:15 by malord            #+#    #+#             */
-/*   Updated: 2022/04/29 12:50:47 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:01:57 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int				ft_checkchar(char c, va_list argu);
 int				ft_numlen(long nbr, long base);
 int				ft_putstr(char *s);
 int				ft_printptr(va_list ptr);
-long			ft_putnbr(long n);
 int				ft_printunsigned(unsigned int n);
 int				ft_printhexa(unsigned int n, char c);
 int				ft_printf(const char *str, ...);
+long			ft_putnbr(long n);
 
 #endif
