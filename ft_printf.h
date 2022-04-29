@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:16:15 by malord            #+#    #+#             */
-/*   Updated: 2022/04/28 14:51:19 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/29 12:50:47 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ long			ft_putnbr(long n);
 int				ft_printunsigned(unsigned int n);
 int				ft_printhexa(unsigned int n, char c);
 int				ft_printf(const char *str, ...);
-int				ft_isflag(char c);
-int				ft_checkflag(char c, va_list argu);
 
 #endif
