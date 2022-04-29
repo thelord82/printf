@@ -6,13 +6,14 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:30:40 by malord            #+#    #+#             */
-/*   Updated: 2022/04/27 16:59:27 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/29 12:43:04 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numlen(unsigned int nbr)
+// Returns the length of a number, including the '-' sign if necessary
+int	ft_numlen(long nbr, long base)
 {
 	long	i;
 
@@ -22,9 +23,9 @@ int	ft_numlen(unsigned int nbr)
 		nbr = -nbr;
 		i++;
 	}
-	while (nbr >= 10)
+	while (nbr >= base)
 	{
-		nbr /= 10;
+		nbr /= base;
 		i++;
 	}
 	return (i);

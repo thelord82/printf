@@ -6,23 +6,18 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:22:43 by malord            #+#    #+#             */
-/*   Updated: 2022/04/27 12:51:36 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/29 12:33:31 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+// Prints to the standard output the given number in parameter
+long	ft_putnbr(long n)
 {	
 	long	len;
 
-	len = ft_numlen(n);
-	if (n == -2147483648)
-	{
-		write(1, "-", 1);
-		write(1, "2", 1);
-		n = 147483648;
-	}
+	len = ft_numlen(n, 10);
 	if (n < 0)
 	{
 		write(1, "-", 1);

@@ -6,12 +6,13 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:31:19 by malord            #+#    #+#             */
-/*   Updated: 2022/04/27 10:30:15 by malord           ###   ########.fr       */
+/*   Updated: 2022/04/29 12:31:32 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// Prints the void* in hexadecimal form
 static void	ft_printhexptr(unsigned long nb, int *len, char *base)
 {
 	if (nb >= 16)
@@ -20,6 +21,8 @@ static void	ft_printhexptr(unsigned long nb, int *len, char *base)
 	*len += 1;
 }
 
+/*Takes the va_arg argument and calls the print function to write in hex form, 
+also adds '0x' in front of it*/
 int	ft_printptr(va_list ptr)
 {
 	int				len;
