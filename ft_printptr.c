@@ -6,7 +6,7 @@
 /*   By: malord <malord@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:31:19 by malord            #+#    #+#             */
-/*   Updated: 2022/04/29 12:31:32 by malord           ###   ########.fr       */
+/*   Updated: 2022/05/03 08:33:33 by malord           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	ft_printhexptr(unsigned long nb, int *len, char *base)
 	*len += 1;
 }
 
-/*Takes the va_arg argument and calls the print function to write in hex form, 
-also adds '0x' in front of it*/
+/* Prints to the standard output the address of the void pointer in parameter. 
+Prints in hex form.*/
 int	ft_printptr(va_list ptr)
 {
 	int				len;

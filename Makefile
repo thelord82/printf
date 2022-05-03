@@ -6,11 +6,12 @@
 #    By: malord <malord@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 11:19:25 by malord            #+#    #+#              #
-#    Updated: 2022/04/29 13:01:42 by malord           ###   ########.fr        #
+#    Updated: 2022/05/03 15:57:14 by malord           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libftprintf.a
+LIBFT		=	libft.a
 
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
@@ -24,10 +25,11 @@ SRCS		=	ft_checkchar.c		\
 				ft_printunsigned.c	\
 				ft_putchar.c		\
 				ft_putnbr.c			\
-				ft_putstr.c			\
-				ft_strlen.c			
+				ft_putstr.c				
 
 BSRCS		=	
+
+LDIR 		= 	libft
 
 OBJS		= 	${SRCS:.c=.o}
 BOBJS		=	${BSRCS:.c=.o}
@@ -35,12 +37,16 @@ BOBJS		=	${BSRCS:.c=.o}
 # Targets
 
 .c.o:
-				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
 
-all: 			$(NAME)
+all: 			$(LDIR)/$(LIBFT) $(NAME) 
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) 
+				cp $(LDIR)/$(LIBFT) $(NAME)
 				ar -crs $(NAME) $(OBJS)
+
+$(LDIR)/$(LIBFT):
+				$(MAKE) -C $(LDIR)
 
 # Removes objects
 clean:
