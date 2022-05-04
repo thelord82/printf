@@ -6,7 +6,7 @@
 #    By: malord <malord@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 11:19:25 by malord            #+#    #+#              #
-#    Updated: 2022/05/03 15:57:14 by malord           ###   ########.fr        #
+#    Updated: 2022/05/04 08:52:12 by malord           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS		=	ft_checkchar.c		\
 
 BSRCS		=	
 
-LDIR 		= 	libft
+LDIR 		= 	libft/
 
 OBJS		= 	${SRCS:.c=.o}
 BOBJS		=	${BSRCS:.c=.o}
@@ -42,7 +42,7 @@ BOBJS		=	${BSRCS:.c=.o}
 all: 			$(LDIR)/$(LIBFT) $(NAME) 
 
 $(NAME): $(OBJS) 
-				cp $(LDIR)/$(LIBFT) $(NAME)
+				cp $(LDIR)$(LIBFT) $(NAME)
 				ar -crs $(NAME) $(OBJS)
 
 $(LDIR)/$(LIBFT):
@@ -55,6 +55,8 @@ clean:
 # Removes objects and executable
 fclean: 		clean
 				$(RM) $(NAME)
+				$(RM) $(LDIR)$(LIBFT)
+				$(RM) $(LDIR)*.o
 
 # Removes objects and executable then remakes all
 re: 			fclean all
